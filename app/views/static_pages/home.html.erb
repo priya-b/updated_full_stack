@@ -1,0 +1,25 @@
+
+
+<%= render partial: "layouts/common/flash_message", :class => 'alert alert-#{key}' %>
+<nav class="navbar navbar-default header">
+
+<div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">
+   <%= image_tag("download.jpg") %></a>
+  </div>
+  </div>
+<div class="center jumbotron" id="p">
+ <h1>Event Scheduling App</h1>
+ <h2>
+   An event hosting app built for Scheduling Events!!!!
+   <a href="http://www.theodinproject.com/"></a>.
+ </h2>
+   
+     <%= link_to "signup", user_new_path,
+                                     class: "btn btn-lg btn-primary" %>
+   <% else %>
+     <%= link_to "login", new_login_path,
+                                 class: "btn btn-lg btn-primary" %>
+  
+</div>

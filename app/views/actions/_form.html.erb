@@ -1,0 +1,50 @@
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title"></h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+       <div class="col-md-6 col-md-offset-3">
+       <%= form_for :event_action, url: action_create_path  do |f| %>
+         <%= f.label :event_title  %>
+         <%= f.text_field :event_title,required: true %><br><br>
+
+         <%= f.label :venue%>
+         <%= f.text_field :venue,required: true %><br><br>
+
+         <%= f.label :date %>
+         <%= f.text_field :date,required: true %><br><br>
+
+         <%= f.label :time%>
+         <%= f.text_field :time,required: true %><br><br>
+         <%= f.label :description %>
+         <%= f.text_area :description,:required=> true %><br><br>
+
+
+
+         <%= f.fields_for :participants do |e|%>
+         <% User.all.each do |d|%>
+         <%= check_box_tag "participant[]", d.id%>
+         <%= d.first_name %><br>
+
+         <% end %>
+         <% end %>
+         <%=f.submit%>
+         <% end %>
+       
+
+
+       </div>
+     </div>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">open</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  </div>
+</div>
+
+</div>
